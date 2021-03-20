@@ -26,7 +26,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'vzamk4gl0-mrg_wd6+hnz%y44ob4=!p^@5w7*xw#%z_*wj4ixt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+
+#remove https://from the url
+#use * if you want to allow all hosts.
+ALLOWED_HOSTS = ['<url>']
 
 
 # Application definition
