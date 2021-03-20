@@ -34,7 +34,6 @@ pep8==1.7.1
 Pillow==8.1.0
 prometheus-client==0.8.0
 prompt-toolkit==3.0.16
-psycopg2==2.6.1
 psycopg2-binary==2.8.6
 pycodestyle==2.7.0
 pycparser==2.20
