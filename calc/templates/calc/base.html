@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Manage storages{% endblock %}</title>
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="{% static "favicon.png" %}" rel="icon" type="image/png"/>
+    </head>
+    <body>
+        <div id="header">
+            <a href="/" class="logo">Manage storages</a>
+        </div>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

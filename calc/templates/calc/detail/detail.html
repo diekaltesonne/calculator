@@ -1,0 +1,53 @@
+{% extends "calc/base.html" %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block content %}
+    {% for str, trucks in context.items %}
+        <table class = "Storages">
+            <tr>
+                <td>id</td>
+                <td>Название скалада</td>
+                <td>Объем до разгрузки, т </td>
+                <td>Объем после разгрузки, т </td>
+                <td>Качественные хар-ки после разгрузки </td>
+            </tr>
+            <tr class = "Storage">
+                <td id = "storage_id">{{str.id}}</td>
+                <td>{{str.name}}</td>
+                <td>{{str.capacity}}</td>
+                <td>{{str.capacity}}</td>
+                <td>{{str.percentageSiO2}} SiO2, {{str.percentageFe}} Fe</td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>Бортовой номер</td>
+                <td>Модель</td>
+                <td>Макс. груоподъемность, т</td>
+                <td>Текущий вес, т</td>
+                <td>Перегруз, %</td>
+                <td>Координаты разгрузки, (X,Y)</td> 
+            </tr>
+            {% for truck in trucks %}
+                <tr class = "Truck">
+                    <td id = "truck_id">{{truck.id}}</td>
+                    <td>{{truck.name}}</td>
+                    <td>{{truck.model}}</td>
+                    <td>{{truck.max_carrying_capacity}}</td>
+                    <td>{{truck.carrying_capacity}}</td>
+                    <td>{{truck.overload}}</td>
+                    <td>
+                        <input id="point_x_input" type="number" value=0 size=1 title="X">
+                        <input id="point_y_input" type="number" value=0 size=1 title="Y">
+                    </td> 
+                </tr>
+            {% endfor %}
+            </table>
+        </table>
+    {% endfor %}
+    <input type="hidden" name="token" value="{{csrf_token}}"/>
+    <input id="submit-btn" type="submit" value="Сalculate"/>
+    <script type="text/javascript" src="{% static "js/detail.js" %}"></script>
+{% endblock %}
+
+
